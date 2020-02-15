@@ -7,6 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Hashtack App</title>
 	<link rel="stylesheet" href="assets/css/reset.min.css">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato|Poppins:400,500,700,800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/bulma.min.css">
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
@@ -21,12 +22,22 @@
                     <span></span> <span></span> <span></span> </span>
 				</div>
 				<div id="navMenu" class="navbar-menu">
-					<div class="navbar-end">
+					<div class="navbar-start">
 						<a class="buttons" href="https://github.com/FullStackForce/Project-01-hashtack">
-						<button class="button is-dark is-small"> <span class="icon is-small">
-                        <i class="fab fa-github"></i>
-                     </span> <span>GitHub</span> </button>
+							<button class="button is-dark is-small"> <span class="icon is-small">
+							<i class="fab fa-github"></i>
+						 </span> <span>GitHub</span> </button>
 						</a>
+					</div>
+					<div class="navbar-end">
+						
+						<i class="ion-ios-sunny-outline switch-icon"></i>
+						<label class="switch">
+							<input type="checkbox" id="theme-switcher">
+							<span class="slider round"></span>
+						  </label>
+						  <i class="ion-ios-moon-outline switch-icon"></i>
+					  </div>
 					</div>
 				</div>
 			</div>
@@ -39,7 +50,7 @@
 					<div class="search-p">
 						<form class="search">
 							<div class="a-field search__field">
-								<input type="text" id="query" class="r-text-field a-field__input search__input" placeholder="e.g pizza or any word of your preference" required>
+								<input type="text" id="get-hashtag" class="r-text-field a-field__input search__input" placeholder="e.g pizza or any word of your preference" required>
 								<button class="r-button search__button search__clear" type="reset"> <span class="search__clear-label">Clear the search form</span> <i class="fas fa-times search__icon search__icon-clear"></i> </button>
 								<label class="a-field__label-wrap search__hint" for="query"> <span class="a-field__label">Type here a hashtag anc click in search</span> </label>
 							</div>
@@ -49,253 +60,26 @@
 				</div>
 			</div>
 	</div>
-	<section class="section">
-	<div class="tabs is-centered">
-		<ul>
+
+	<section class="is-medium">
+		<div class="hero-body">
+		  <div class="columns is-centered">
+		   <div class="tabs column is-three-quarters">
+		 <ul>
 			<li class="is-active">
 				  <span class="icon is-small"><i class="fas fa-fire" style="color: #e25555;"></i></span>
-				  <span>Trending</span>&nbsp;&nbsp;
+				  <span>Trending Now</span>&nbsp;&nbsp;
 			  </li>
-			  <li>
-				<a> <span>#Music</span> </a>
-			</li>
-			<li>
-				<a> <span>#Videos</span> </a>
-			</li>
-			<li>
-				<a> <span>#News</span> </a>
-			</li>
-			<li>
-				<a> <span>#Pornfood</span> </a>
-			</li>
-			<li>
-				<a> <span>#DonaldTrump</span> </a>
-			</li>
-			<li>
-				<a> <span>#PlayBoy</span> </a>
-			</li>
-		</ul>
+			  <div class="tabs hashContainer"></div>
+		</ul> 
 	</div>
+</div>
+</div>
+</div>
 </section>
 	<section class="section">
 		<div class="container">
-			<div class="columns is-multiline">
-				<div class="column is-one-quarter-desktop is-half-tablet">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by2"> <img src="https://unsplash.it/300/200/?random&pic=1" alt="Placeholder image"> </figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 has-text-centered">hashtag</p>
-								</div>
-							</div>
-							<div class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a>
-								<br>
-								<time datetime="2016-1-1">11:09 PM - Jan 8 2020</time>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column is-one-quarter-desktop is-half-tablet">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by2"> <img src="https://unsplash.it/300/200/?random&pic=2" alt="Placeholder image"> </figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 has-text-centered">hashtag</p>
-								</div>
-							</div>
-							<div class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a>
-								<br>
-								<time datetime="2016-1-1">11:09 PM - Jan 8 2020</time>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column is-one-quarter-desktop is-half-tablet">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by2"> <img src="https://unsplash.it/300/200/?random&pic=3" alt="Placeholder image"> </figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 has-text-centered">hashtag</p>
-								</div>
-							</div>
-							<div class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a>
-								<br>
-								<time datetime="2016-1-1">11:09 PM - Jan 8 2020</time>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column is-one-quarter-desktop is-half-tablet">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by2"> <img src="https://unsplash.it/300/200/?random&pic=4" alt="Placeholder image"> </figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 has-text-centered">hashtag</p>
-								</div>
-							</div>
-							<div class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a>
-								<br>
-								<time datetime="2016-1-1">11:09 PM - Jan 8 2020</time>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column is-one-quarter-desktop is-half-tablet">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by2"> <img src="https://unsplash.it/300/200/?random&pic=5" alt="Placeholder image"> </figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 has-text-centered">hashtag</p>
-								</div>
-							</div>
-							<div class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a>
-								<br>
-								<time datetime="2016-1-1">11:09 PM - Jan 8 2020</time>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column is-one-quarter-desktop is-half-tablet">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by2"> <img src="https://unsplash.it/300/200/?random&pic=6" alt="Placeholder image"> </figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 has-text-centered">hashtag</p>
-								</div>
-							</div>
-							<div class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a>
-								<br>
-								<time datetime="2016-1-1">11:09 PM - Jan 8 2020</time>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column is-one-quarter-desktop is-half-tablet">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by2"> <img src="https://unsplash.it/300/200/?random&pic=12" alt="Placeholder image"> </figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 has-text-centered">hashtag</p>
-								</div>
-							</div>
-							<div class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a>
-								<br>
-								<time datetime="2016-1-1">11:09 PM - Jan 8 2020</time>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column is-one-quarter-desktop is-half-tablet">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by2"> <img src="https://unsplash.it/300/200/?random&pic=7" alt="Placeholder image"> </figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 has-text-centered">hashtag</p>
-								</div>
-							</div>
-							<div class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a>
-								<br>
-								<time datetime="2016-1-1">11:09 PM - Jan 8 2020</time>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column is-one-quarter-desktop is-half-tablet">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by2"> <img src="https://unsplash.it/300/200/?random&pic=8" alt="Placeholder image"> </figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 has-text-centered">hashtag</p>
-								</div>
-							</div>
-							<div class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a>
-								<br>
-								<time datetime="2016-1-1">11:09 PM - Jan 8 2020</time>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column is-one-quarter-desktop is-half-tablet">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by2"> <img src="https://unsplash.it/300/200/?random&pic=9" alt="Placeholder image"> </figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 has-text-centered">hashtag</p>
-								</div>
-							</div>
-							<div class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a>
-								<br>
-								<time datetime="2016-1-1">11:09 PM - Jan 8 2020</time>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column is-one-quarter-desktop is-half-tablet">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by2"> <img src="https://unsplash.it/300/200/?random&pic=10" alt="Placeholder image"> </figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 has-text-centered">hashtag</p>
-								</div>
-							</div>
-							<div class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a>
-								<br>
-								<time datetime="2016-1-1">11:09 PM - Jan 8 2020</time>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column is-one-quarter-desktop is-half-tablet">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by2"> <img src="https://unsplash.it/300/200/?random&pic=11" alt="Placeholder image"> </figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 has-text-centered">hashtag</p>
-								</div>
-							</div>
-							<div class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a> <a href="#">#hashtag</a>
-								<br>
-								<time datetime="2016-1-1">11:09 PM - Jan 8 2020</time>
-							</div>
-						</div>
-					</div>
-				</div>
+			<div id="cardContainer" class="columns is-multiline">
 			</div>
 		</div>
 		<div class="container">
@@ -309,11 +93,17 @@
 				<p> <strong>#hashtrack</strong> Made with <span style="color: #e25555;"><i class="fas fa-heart"></i></span> by UCF CodingBootCamp Students. </p>
 			</div>
 		</div>
+		<a href="#" class="scroll-top"><i class="fa fa-chevron-up"></i></a>
 	</footer>
+
+	<script type="text/javascript" src="assets/js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="assets/js/oauth.js"></script>
+    <script type="text/javascript" src="assets/js/sha1.js"></script>
 	<script src="https://kit.fontawesome.com/ade04dfe20.js" crossorigin="anonymous"></script>
 	<script src='https://unpkg.com/headroom.js'></script>
 	<script src="assets/js/script.js"></script>
 	<script src="assets/js/app.js"></script>
+	
 </body>
 
 </html>
