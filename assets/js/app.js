@@ -1,80 +1,120 @@
 // hashtags trending start here
+var consumerKey = "YFCcIbAB6S26K4g1hzYN3gweZ";
+var consumerSecret = "LefGGvTEfOfm6nXvJsp9UIop8OMkg0ejmos8pVqA6g1w306EuS";
+var accessToken = "821496917200879616-PlzPlbxqf31caklxhLcZd7OKmTUZ9zq";
+var tokenSecret = "luobeV9ySMqXIATrKJZtoXvJJmHyTomjjjtwmXDU0FJDg";
 
-var consumerKey    = "";
-var consumerSecret = "";
-var accessToken    = "";
-var tokenSecret    = "";
-
-function getTwitter(action, woeid, x)   {
-
-	var accessor = {
-		consumerSecret: consumerSecret,
-		tokenSecret: tokenSecret
-	};
-
-	var message = {
-		method: "GET",
-		action: action,
-		parameters: {
-			oauth_version: "1.0",
-			oauth_signature_method: "HMAC-SHA1",
-			oauth_consumer_key: consumerKey,
-			oauth_token: accessToken,
-			id: woeid,
-			callback: x
-		}
-	};
-
-	OAuth.setTimestampAndNonce(message);
-	OAuth.SignatureMethod.sign(message, accessor);
-	var url = OAuth.addToURL(message.action, message.parameters);
-
-	$.ajax({
-		type: message.method,
-		url: url,
-		dataType: "jsonp",
-		jsonp: false,
-		cache: true,
-	});
+function getTwitter(action, woeid, x) {
+  var accessor = {
+    consumerSecret: consumerSecret,
+    tokenSecret: tokenSecret
+  };
+  var message = {
+    method: "GET",
+    action: action,
+    parameters: {
+      oauth_version: "1.0",
+      oauth_signature_method: "HMAC-SHA1",
+      oauth_consumer_key: consumerKey,
+      oauth_token: accessToken,
+      id: woeid,
+      callback: x
+    }
+  };
+  OAuth.setTimestampAndNonce(message);
+  OAuth.SignatureMethod.sign(message, accessor);
+  var url = OAuth.addToURL(message.action, message.parameters);
+  $.ajax({
+    type: message.method,
+    url: url,
+    dataType: "jsonp",
+    jsonp: false,
+    cache: true
+  });
 }
 
-function twitterTags(query){
-	var url = "https://api.twitter.com/1.1/search/tweets.json?q="+query;
-	var woeid = 2466256;
-	getTwitter(url, woeid, "test");
-};
-
-$("button").on("click", function (event) {
+function twitterTags(query) {
+  var url = "https://api.twitter.com/1.1/search/tweets.json?q=%23" + query + "&count=56&include_entities=true";
+  var woeid = 2466256;
+  getTwitter(url, woeid, "test");
+}
+$("button").on("click", function(event) {
 	event.preventDefault();
 	var value = $("#get-hashtag").val();
 	twitterTags(value)
-
-
+	$("#get-hashtag").val("");
 })
+  
+  var toneResponse;
+function getMyDocumentTone(myCorpus, index) {
+  // var toneResponse;
+  var settings = {
+    url:
+      "https://api.us-south.tone-analyzer.watson.cloud.ibm.com/instances/631260ac-7831-4df4-abb7-fe1e5cd2eeb0/v3/tone?version=2017-09-21",
+    method: "POST",
+    timeout: 0,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Basic YXBpa2V5OlFSTFRCU2hFbmdzUHJsaXhoR0JraHZ2dm1CcmprRmRWY25PWlBtNi03dWNW"
+    },
+    data: JSON.stringify({ text: myCorpus })
+  };
 
+  $.ajax(settings).done(function(response) {
+    // console.log(response);
+    toneResponse = response.document_tone.tones;
+      console.log(toneResponse);
+        var toneDiv = $("<div>").addClass("content");
+    if (toneResponse.length) {
+      toneResponse.forEach(element => {
+        toneDiv.append(
+          $("<p>").text(
+            "Tone: " +
+            element.tone_name +
+            " Confidence: " +
+            element.score * 100
+          )
+        );
+      });
+      $("#tweet_" + index+" .card-content").append(toneDiv);
+        }
+    // console.log(toneResponse);
+  });
 
+  return toneResponse;
+}
 
+function test(data) {
+  $("#cardContainer").empty();
+  // var result = data
+  console.log(data);
+  var tones = [];
+  for (let i = 0; i < data.statuses.length; i++) {
+    console.log(i);
+    var time = data.statuses[i].created_at;
+    var newTime = time.substring(0, 11);
+    console.log(newTime);
+    var hashtags = "";
+    if (!data.statuses[i].entities.hashtags.length) {
+      hashtags = data.statuses[i].user.name;
+    } else {
+      hashtags = "#" + data.statuses[i].entities.hashtags[0].text;
+    }
 
-function test(data){
-	$("#cardContainer").empty();
-	// var result = data
-	console.log(data);
+    // var media = "";
+    // if(!data.statuses[i].entities.media[0].media_url.length) {
+    // 	media = "assets/images/hashtag.jpg"
+    // } else {
+    // 	media = data.statuses[i].entities.media[0].media_url
+    // }
 
-				for (let i = 0; i < data.statuses.length; i++) {
-		        console.log(i);
-		        var time = data.statuses[i].created_at;
-		        var newTime = time.substring(0,11)
-				console.log(newTime)
-				var hashtags = "";
-				if (!data.statuses[i].entities.hashtags.length){
-					hashtags = data.statuses[i].user.name
-				} else {
-					hashtags = "#"+data.statuses[i].entities.hashtags[0].text
-				}
-				
-		        var content=`
+    var corpus = data.statuses[i].text;
+    tones = getMyDocumentTone(corpus, i);
+    console.log(tones);
+
+    var content = `
 		        <div class="column is-one-quarter-desktop is-half-tablet">
-							<div class="card">
+							<div class="card" id="tweet_${i}">
 								<div class="card-image">
 									<figure class="image is-3by2"> <img src=assets/images/hashtag.jpg alt="Placeholder image"> </figure>
 								</div>
@@ -88,33 +128,32 @@ function test(data){
 										<br>
 										<time datetime="2016-1-1"> ${newTime} </time>
 									</div>
+									<div class="content">
 								</div>
 							</div>
 						</div>
-		        `
-		        $("#cardContainer").append(content);
-		
-		        }
-	            
-	// for( var i = 0; i < result.length; i++ ) {
-	// 	var name = result[i].name;
-	// 	var url = result[i].url;                  
-
-    }
-
-
-function update(data){
-	$(".hashContainer").empty();
-	var result = data[0].trends;              
-	for( var i = 0; i < result.length; i++ ) {
-		var name = result[i].name;
-		var url = result[i].url;                  
-
-		$(".hashContainer").append('<li><a href="#" target="_blank"> <div>' + name + '</div> </a> </li>');
-	}
+		        `;
+    $("#cardContainer").append(content);
+    // var toneDiv = $("<div>").addClass("content");
+    // if (tones.length) {
+    //   tones.forEach(element => {
+    //     toneDiv.append($("<p>").text("Tone: " + element.tone_name + " Confidence: " + element.score * 100));
+    //   });
+    //   $("#tweet_${i}").append(toneDiv);
+    // }
+  }
 }
 
-$(window).load(function(){
+function update(data) {
+	$(".hashContainer").empty();
+	var result = data[0].trends;
+	for(var i = 0; i < result.length; i++) {
+		var name = result[i].name;
+		var url = result[i].url;
+		$(".hashContainer").append('<li><a href="' + url + '" target="_blank"><div>' + name + '</div> </a> </li>');
+	}
+}
+$(window).load(function() {
 	var url = "https://api.twitter.com/1.1/trends/place.json";
 	var woeid = 2466256;
 	getTwitter(url, woeid, "update");

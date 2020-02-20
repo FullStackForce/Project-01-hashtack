@@ -1,15 +1,19 @@
-# Project-01-hashtack
-## FRONT-END made it with bulma.io framework
+# Project 01 hashtrack - UCF CodingBootCamp
+## FRONT-END made with bulma.io framework & Twitter Api.
 
+Project 01 hashtrack - with this app it is possible to search hashtags from twitter and at the same time show top trending hashtags, and topics per location. In this demo only Florida State is available.
 - Components in this repo:
   - HTML
-  - CSS
-  - Javascript
+  - CSS:
+  - Bulma.oi CSS Framework
+  - FontAwesome
+  - Ionicons
+  - Javascript:
+  - headroom.js
   - README
 
-Project 01 hashtack - UCF CodingBootCamp
 
-![Image of FullStackForce](https://i.postimg.cc/HsL2QvL4/hastrack.png)
+![Image of FullStackForce](https://i.postimg.cc/j203HvhL/hastrack.png)
 
-Check my work  - Click!
-[HERE](https://fullstackforce.github.io/Project-01-hashtack/)
+Click here to see demo!
+[HERE](https://fullstackforce.github.io/Project-01-hashtrack/)

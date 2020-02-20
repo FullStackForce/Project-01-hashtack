@@ -5,54 +5,73 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Hashtack App</title>
+	<title>Hashtrack App</title>
 	<link rel="stylesheet" href="assets/css/reset.min.css">
-	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato|Poppins:400,500,700,800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/bulma.min.css">
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
 	<link rel="stylesheet" href="assets/css/style.css"> </head>
 
 <body>
+
 	<header class="headroom">
-		<nav class="navbar is-white">
+		<nav class="navbar is-white navbar-center">
 			<div class="container">
-				<div class="navbar-brand">
-					<a class="navbar-item" href="index.html"> <i class="fab fa-fw fa-slack-hash hash-icon"></i><span class="light-logo">hash</span><span class="bold-logo">track</span> </a> <span class="navbar-burger burger" data-target="navMenu">
-                    <span></span> <span></span> <span></span> </span>
-				</div>
-				<div id="navMenu" class="navbar-menu">
-					<div class="navbar-start">
-						<a class="buttons" href="https://github.com/FullStackForce/Project-01-hashtack">
-							<button class="button is-dark is-small"> <span class="icon is-small">
-							<i class="fab fa-github"></i>
-						 </span> <span>GitHub</span> </button>
-						</a>
-					</div>
-					<div class="navbar-end">
-						
-						<i class="ion-ios-sunny-outline switch-icon"></i>
-						<label class="switch">
-							<input type="checkbox" id="theme-switcher">
-							<span class="slider round"></span>
-						  </label>
-						  <i class="ion-ios-moon-outline switch-icon"></i>
-					  </div>
-					</div>
+			<div class="navbar-brand">
+				<a class="navbar-item" href="index.html"> <i class="fab fa-fw fa-slack-hash hash-icon"></i><span class="light-logo">hash</span><span class="bold-logo">track</span>
+				</a>
+				  
+					<a class="navbar-item is-hidden-desktop" href="https://github.com/FullStackForce/Project-01-hashtrack" target="_blank">
+						<span class="button is-dark is-small"> <span class="icon is-small">
+						  <i class="fab fa-github"></i>
+						  </span> <span>GitHub</span> </span>
+					  </a>
+
+					<ion-icon name="sunny-outline" class="sunny-icon is-hidden-desktop"></ion-icon>
+					<label class="switch is-hidden-desktop">
+					  <input type="checkbox" id="theme-switcher"> <span class="slider round"></span> </label>
+					<ion-icon name="moon-outline" class="moon-icon is-hidden-desktop"></ion-icon>
+	  
+				<div class="navbar-burger burger" data-target="navMenubd-example">
+				  <span></span>
+				  <span></span>
+				  <span></span>
 				</div>
 			</div>
+	  
+			<div id="navMenubd-example" class="navbar-menu">
+			  <div class="navbar-start">
+	  
+				<a class="navbar-item is-hidden-tablet-only is-hidden-mobile" href="https://kiyole.github.io/hashtrack/" target="_blank">
+				  <span class="button is-dark is-small"> <span class="icon is-small">
+					<i class="fab fa-github"></i>
+					</span> <span>GitHub</span> </span>
+				</a>
+			  </div>	  
+			  <div class="navbar-end is-hidden-tablet-only is-hidden-mobile">
+				<ion-icon name="sunny-outline" class="sunny-icon"></ion-icon>
+				  <label class="switch">
+					<input type="checkbox" id="theme-switcher"> <span class="slider round"></span> </label>
+				  <ion-icon name="moon-outline" class="moon-icon"></ion-icon>
+	  
+			  </div>
+			</div>
+		  </div>
+		  </div>
+		</div>
 		</nav>
-	</header>
+	  </header>
+
 	<div class="container">
 		<section class="hero">
 			<div class="hero-body">
-				<div class="seach-body">
+				<div class="search-body">
 					<div class="search-p">
 						<form class="search">
 							<div class="a-field search__field">
-								<input type="text" id="get-hashtag" class="r-text-field a-field__input search__input" placeholder="e.g pizza or any word of your preference" required>
-								<button class="r-button search__button search__clear" type="reset"> <span class="search__clear-label">Clear the search form</span> <i class="fas fa-times search__icon search__icon-clear"></i> </button>
-								<label class="a-field__label-wrap search__hint" for="query"> <span class="a-field__label">Type here a hashtag anc click in search</span> </label>
+								<input type="text" id="get-hashtag" class="r-text-field a-field__input search__input" placeholder="i.e. follow4follow" required>
+								<button class="r-button search__button search__clear" type="reset"> <span class="search__clear-label">Clear the search form</span> </button>
+								<label class="a-field__label-wrap search__hint" for="query"> <span class="a-field__label">Search Hashtag Here</span> </label>
 							</div>
 							<button class="r-button search__button search__submit" type="submit"> <span class="search__submit-label">Search</span> <i class="fas fa-search search__icon search__icon-search"></i> </button>
 						</form>
@@ -60,50 +79,41 @@
 				</div>
 			</div>
 	</div>
-
 	<section class="is-medium">
 		<div class="hero-body">
-		  <div class="columns is-centered">
-		   <div class="tabs column is-three-quarters">
-		 <ul>
-			<li class="is-active">
-				  <span class="icon is-small"><i class="fas fa-fire" style="color: #e25555;"></i></span>
-				  <span>Trending Now</span>&nbsp;&nbsp;
-			  </li>
-			  <div class="tabs hashContainer"></div>
-		</ul> 
-	</div>
-</div>
-</div>
-</div>
-</section>
-	<section class="section">
-		<div class="container">
-			<div id="cardContainer" class="columns is-multiline">
+			<div class="columns is-centered">
+				<div class="tabs column is-three-quarters">
+					<ul>
+						<li class="is-active"> <span class="icon is-small"><i class="fab fa-twitter" style="color: #3a9ced;"></i></span> <span>Trending</span>&nbsp;</li>
+						<div class="tabs hashContainer"></div>
+					</ul>
+				</div>
 			</div>
 		</div>
+		</div>
+	</section>
+	<section class="section">
 		<div class="container">
-			<div class="load-body">
-				<button id="button" class="button is-large is-success is-rounded search-p">load more</button>
-			</div>
+			<div id="cardContainer" class="columns is-multiline"> </div>
+		</div>
 	</section>
 	<footer class="footer is-gray">
 		<div class="container">
 			<div class="content has-text-centered">
 				<p> <strong>#hashtrack</strong> Made with <span style="color: #e25555;"><i class="fas fa-heart"></i></span> by UCF CodingBootCamp Students. </p>
 			</div>
-		</div>
-		<a href="#" class="scroll-top"><i class="fa fa-chevron-up"></i></a>
-	</footer>
+	</div> <a href="#" class="scroll-top"><i class="fa fa-chevron-up"></i></a> </footer>
 
+	
 	<script type="text/javascript" src="assets/js/jquery-1.11.3.js"></script>
-    <script type="text/javascript" src="assets/js/oauth.js"></script>
-    <script type="text/javascript" src="assets/js/sha1.js"></script>
+	<script type="text/javascript" src="assets/js/oauth.js"></script>
+	<script type="text/javascript" src="assets/js/sha1.js"></script>
 	<script src="https://kit.fontawesome.com/ade04dfe20.js" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 	<script src='https://unpkg.com/headroom.js'></script>
 	<script src="assets/js/script.js"></script>
+	<!-- <script src="assets/js/watson.js"></script> -->
 	<script src="assets/js/app.js"></script>
-	
 </body>
 
 </html>
