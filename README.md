@@ -16,4 +16,4 @@ Project 01 hashtrack - with this app it is possible to search hashtags from twit
 ![Image of FullStackForce](https://i.postimg.cc/j203HvhL/hastrack.png)
 
 Click here to see demo!
-[HERE](https://fullstackforce.github.io/Project-01-hashtrack/)
+[HERE](https://socialtracker.herokuapp.com/index.html)
