@@ -1,8 +1,8 @@
 // hashtags trending start here
-var consumerKey = "YFCcIbAB6S26K4g1hzYN3gweZ";
-var consumerSecret = "LefGGvTEfOfm6nXvJsp9UIop8OMkg0ejmos8pVqA6g1w306EuS";
-var accessToken = "821496917200879616-PlzPlbxqf31caklxhLcZd7OKmTUZ9zq";
-var tokenSecret = "luobeV9ySMqXIATrKJZtoXvJJmHyTomjjjtwmXDU0FJDg";
+var consumerKey = "ncJGx5Ew3PTKe2aXzvGL4OZ8X";
+var consumerSecret = "4gxVd90hlUgKXWjyJmJ9stg5PybkeuAD9ZtE1MuAdxrb8foiB3";
+var accessToken = "821496917200879616-YkKR4K5OnTK5b8MseTLGejCaBQshDr7";
+var tokenSecret = "UIZEbvCyyjGWCbJ2QdS1pXapJj45KU9qaQR57COzu7TwZ";
 
 function getTwitter(action, woeid, x) {
   var accessor = {
